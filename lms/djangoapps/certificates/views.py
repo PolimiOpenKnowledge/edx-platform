@@ -12,6 +12,8 @@ from certificates.models import certificate_status_for_student, CertificateStatu
 from certificates.queue import XQueueCertInterface
 from xmodule.course_module import CourseDescriptor
 from xmodule.modulestore.django import modulestore
+from opaque_keys import InvalidKeyError
+from opaque_keys.edx.keys import CourseKey
 from opaque_keys.edx.locations import SlashSeparatedCourseKey
 
 logger = logging.getLogger(__name__)
@@ -60,7 +62,11 @@ def update_certificate(request):
         xqueue_header = json.loads(request.POST.get('xqueue_header'))
 
         try:
-            course_key = SlashSeparatedCourseKey.from_deprecated_string(xqueue_body['course_id'])
+            try:
+                course_key = CourseKey.from_string(xqueue_body['course_id'])
+            except InvalidKeyError:
+                print("Course id {} could not be parsed as a CourseKey; falling back to SSCK.from_dep_str".format(xqueue_body['course_id']))
+                course_key = SlashSeparatedCourseKey.from_deprecated_string(xqueue_body['course_id'])
 
             cert = GeneratedCertificate.objects.get(
                 user__username=xqueue_body['username'],
