@@ -13,19 +13,32 @@ class ECOOpenIdBackend(BaseOAuth2):
 
     @property
     def AUTHORIZATION_URL(self):
-        return self.setting('IDP_URL') + "/authorize"  # 'http://ecoidp.test.reimeritsolutions.nl/authorize'
+        return self.additional_setting('IDP_URL') + "/authorize"  # 'http://ecoidp.test.reimeritsolutions.nl/authorize'
 
     @property
     def ACCESS_TOKEN_URL(self):
-        return self.setting('IDP_URL') + "/token"  # 'http://ecoidp.test.reimeritsolutions.nl/token'
+        return self.additional_setting('IDP_URL') + "/token"  # 'http://ecoidp.test.reimeritsolutions.nl/token'
 
     @property
     def REVOKE_TOKEN_URL(self):
-        return self.setting('IDP_URL') + "/token"  # 'http://ecoidp.test.reimeritsolutions.nl/token'
+        return self.additional_setting('IDP_URL') + "/token"  # 'http://ecoidp.test.reimeritsolutions.nl/token'
 
     @property
     def USERINFO_URL(self):
-        return self.setting('IDP_URL') + "/userinfo"  # 'http://ecoidp.test.reimeritsolutions.nl/userinfo'
+        return self.additional_setting('IDP_URL') + "/userinfo"  # 'http://ecoidp.test.reimeritsolutions.nl/userinfo'
+
+    def additional_setting(self,setting_name, default=None):
+        """ Get a setting, from OAuth2ProviderConfig """
+        if not hasattr(self, '_config'):
+            from .models import OAuth2ProviderConfig
+            try:
+                self._config = OAuth2ProviderConfig.objects.filter(backend_name=self.name, enabled= True).order_by('-change_date')[0]
+            except IndexError:
+                self._config=None
+        try:
+            return self._config.get_setting(setting_name)
+        except KeyError:
+            return self.strategy.setting(setting_name, default)
 
     def auth_headers(self):
         return {
