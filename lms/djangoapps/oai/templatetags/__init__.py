@@ -1,3 +1,0 @@
-"""
-OAI TEMPLATE TAGS
-"""
