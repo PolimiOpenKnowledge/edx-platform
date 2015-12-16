@@ -1,5 +1,6 @@
 ### Custom requirements ###
 
 # Needed for oai installed app (TODO : move outside all customization)
--e git+https://github.com/infrae/pyoai.git@2.4.4#egg=pyoai==2.4.4
+# -e git+https://github.com/infrae/pyoai.git@2.4.4#egg=pyoai==2.4.4
+# -e git+https://github.com/RusticiSoftware/TinCanPython.git@0.0.5#egg=tincan
 -e git+https://github.com/marcore/pok-eco@xapi#egg=pokeco
