@@ -1791,6 +1791,7 @@ INSTALLED_APPS = (
     'static_template_view',
     'staticbook',
     'track',
+    'xapi',
     'eventtracking.django',
     'util',
     'certificates',
@@ -2152,7 +2153,7 @@ INSTALLED_APPS += ('oai',)
 INSTALLED_APPS += ('ecoapi',)
 
 ############################## XAPI Integration ##############################
-INSTALLED_APPS += ('xapi',)
+#INSTALLED_APPS += ('xapi',)
 
 ############################ ORA 2 ############################################
 
