@@ -58,7 +58,6 @@ def offline_grade_calculation(course_key):
         gradeset['raw_scores'] = [score._asdict() for score in gradeset['raw_scores']]
         # Encode as JSON and save:
         gradeset_str = enc.encode(gradeset)
-        gs = enc.encode(gradeset)
         ocg, _created = models.OfflineComputedGrade.objects.get_or_create(user=student, course_id=course_key)
         ocg.gradeset = gradeset_str
         ocg.save()
