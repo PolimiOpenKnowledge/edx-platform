@@ -624,6 +624,8 @@ class CourseAboutSearchIndexer(object):
                     if isinstance(section_content, basestring):
                         analyse_content = strip_html_content_to_text(section_content)
                     course_info['content'][about_information.property_name] = analyse_content
+                    if about_information.property_name == "more_info":
+                        course_info[about_information.property_name] = analyse_content
                 if about_information.index_flags & AboutInfo.PROPERTY:
                     course_info[about_information.property_name] = section_content
 
