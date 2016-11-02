@@ -2958,3 +2958,20 @@ AFFILIATE_COOKIE_NAME = 'affiliate_id'
 # The cache is cleared when Redirect models are saved/deleted
 REDIRECT_CACHE_TIMEOUT = None  # The length of time we cache Redirect model data
 REDIRECT_CACHE_KEY_PREFIX = 'redirects'
+
+########################## Course Discovery #######################
+LANGUAGE_MAP = {'terms': {lang: display for lang, display in ALL_LANGUAGES}, 'name': 'Language'}
+DEFAULT_COURSE_DISCOVERY_MEANINGS = {
+            'org': {
+                        'name': 'Organization',
+                            },
+                'modes': {
+                            'name': 'Course Type',
+                                    'terms': {
+                                                    'honor': 'Honor',
+                                                                'verified': 'Verified',
+                                                                        },
+                                        },
+                    'language': LANGUAGE_MAP,
+                    }
+DEFAULT_COURSE_DISCOVERY_FILTERS = ["org", "language", "modes"]
