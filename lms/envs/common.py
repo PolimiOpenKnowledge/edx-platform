@@ -2600,6 +2600,8 @@ OPTIONAL_APPS = (
     # Organizations App (http://github.com/edx/edx-organizations)
     'organizations',
 )
+# ECO Integration apps
+OPTIONAL_APPS += ('oai','ecoapi','xapi',)
 
 for app_name in OPTIONAL_APPS:
     # First attempt to only find the module rather than actually importing it,
