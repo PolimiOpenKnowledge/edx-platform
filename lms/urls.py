@@ -1022,3 +1022,10 @@ if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
             name='submit_financial_assistance_request'
         )
     )
+# ECO Integration apps
+urlpatterns += (
+    url(r'', include('oai.urls')),
+)
+urlpatterns += (
+    url(r'^ecoapi/', include('ecoapi.urls')),
+)
