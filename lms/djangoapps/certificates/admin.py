@@ -54,8 +54,8 @@ class GeneratedCertificateAdmin(admin.ModelAdmin):
     """
     raw_id_fields = ('user',)
     show_full_result_count = False
-    search_fields = ('course_id', 'user__username')
-    list_display = ('id', 'course_id', 'mode', 'user')
+    search_fields = ('course_id', 'user__username', 'user__email')
+    list_display = ('id', 'course_id', 'user', 'status', 'grade')
 
 
 admin.site.register(CertificateGenerationConfiguration)

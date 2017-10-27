@@ -145,7 +145,7 @@ class CourseEnrollmentAdmin(admin.ModelAdmin):
     list_display = ('id', 'course_id', 'mode', 'user', 'is_active',)
     list_filter = ('mode', 'is_active',)
     raw_id_fields = ('user',)
-    search_fields = ('course_id', 'mode', 'user__username',)
+    search_fields = ('course_id', 'mode', 'user__username', 'user__email',)
 
     def queryset(self, request):
         return super(CourseEnrollmentAdmin, self).queryset(request).select_related('user')
