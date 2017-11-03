@@ -2601,7 +2601,7 @@ OPTIONAL_APPS = (
     'organizations',
 )
 # ECO Integration apps
-OPTIONAL_APPS += ('oai','ecoapi','xapi',)
+OPTIONAL_APPS += ('oai','ecoapi','xapi','asictapi',)
 
 for app_name in OPTIONAL_APPS:
     # First attempt to only find the module rather than actually importing it,
