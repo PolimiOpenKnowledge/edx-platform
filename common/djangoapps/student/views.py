@@ -125,6 +125,7 @@ from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.core.djangoapps.theming import helpers as theming_helpers
 
+from g_recaptcha.validate_recaptcha import validate_captcha
 
 log = logging.getLogger("edx.student")
 AUDIT_LOG = logging.getLogger("audit")
@@ -1846,7 +1847,7 @@ def _record_registration_attribution(request, user):
     if user is not None and affiliate_id is not None:
         UserAttribute.set_user_attribute(user, REGISTRATION_AFFILIATE_ID, affiliate_id)
 
-
+@validate_captcha
 @csrf_exempt
 def create_account(request, post_override=None):
     """
