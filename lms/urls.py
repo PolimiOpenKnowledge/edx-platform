@@ -1029,3 +1029,6 @@ urlpatterns += (
 urlpatterns += (
     url(r'^ecoapi/', include('ecoapi.urls')),
 )
+urlpatterns += (
+    url(r'^asictapi/', include('asictapi.urls')),
+)
