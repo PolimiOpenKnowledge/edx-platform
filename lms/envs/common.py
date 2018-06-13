@@ -3213,3 +3213,20 @@ COURSES_API_CACHE_TIMEOUT = 3600  # Value is in seconds
 
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = LOW_PRIORITY_QUEUE
+
+########################## Course Discovery #######################
+LANGUAGE_MAP = {'terms': {lang: display for lang, display in ALL_LANGUAGES}, 'name': 'Language'}
+DEFAULT_COURSE_DISCOVERY_MEANINGS = {
+            'org': {
+                        'name': 'Organization',
+                            },
+                'modes': {
+                            'name': 'Course Type',
+                                    'terms': {
+                                                    'honor': 'Honor',
+                                                                'verified': 'Verified',
+                                                                        },
+                                        },
+                    'language': LANGUAGE_MAP,
+                    }
+DEFAULT_COURSE_DISCOVERY_FILTERS = ["org", "language", "modes"]

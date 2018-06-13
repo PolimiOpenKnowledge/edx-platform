@@ -569,7 +569,8 @@ class CourseAboutSearchIndexer(object):
         AboutInfo("enrollment_start", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
         AboutInfo("enrollment_end", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
         AboutInfo("org", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
-        AboutInfo("modes", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_MODE),
+        AboutInfo("display_organization", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
+	AboutInfo("modes", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_MODE),
         AboutInfo("language", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
     ]
 
@@ -625,7 +626,9 @@ class CourseAboutSearchIndexer(object):
                     if isinstance(section_content, basestring):
                         analyse_content = strip_html_content_to_text(section_content)
                     course_info['content'][about_information.property_name] = analyse_content
-                if about_information.index_flags & AboutInfo.PROPERTY:
+		    if about_information.property_name == "more_info":
+                    	course_info[about_information.property_name] = analyse_content
+		if about_information.index_flags & AboutInfo.PROPERTY:
                     course_info[about_information.property_name] = section_content
 
         # Broad exception handler to protect around and report problems with indexing
