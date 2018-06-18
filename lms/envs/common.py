@@ -2790,7 +2790,8 @@ OPTIONAL_APPS = (
 )
 
 #CAPTCHA 
-OPTIONAL_APPS += ('g_recaptcha',)
+OPTIONAL_APPS += ('g_recaptcha','asictapi',)
+
 
 
 for app_name in OPTIONAL_APPS:

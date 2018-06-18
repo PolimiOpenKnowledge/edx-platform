@@ -1012,6 +1012,14 @@ urlpatterns += (
     url(r'^api/', include('edx_proctoring.urls')),
 )
 
+
+# include asictapi for certificates
+urlpatterns += (
+    url(r'^asictapi/', include('asictapi.urls')),
+)
+
+
+
 if settings.FEATURES.get('ENABLE_FINANCIAL_ASSISTANCE_FORM'):
     urlpatterns += (
         url(
