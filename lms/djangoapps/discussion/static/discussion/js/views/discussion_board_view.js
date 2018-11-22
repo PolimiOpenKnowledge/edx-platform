@@ -55,6 +55,7 @@
                 this.renderBreadcrumbs();
                 $(window).bind('load scroll resize', _.bind(this.updateSidebar, this));
                 this.showBrowseMenu(true);
+                this.hideBrowseMenu();
                 return this;
             },
 
