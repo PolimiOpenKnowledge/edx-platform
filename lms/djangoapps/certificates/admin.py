@@ -55,10 +55,10 @@ class GeneratedCertificateAdmin(admin.ModelAdmin):
     Django admin customizations for GeneratedCertificate model
     """
     raw_id_fields = ('user',)
-    list_filter = ('status', 'user',)
+    list_filter = ('status',)
     show_full_result_count = False
-    search_fields = ('course_id', 'user__username', 'user__email',)
-    list_display = ('id', 'course_id', 'user', 'status', 'grade',)
+    search_fields = ('course_id', 'user__username', 'user__email',) #POK CUSTOMIZATION
+    list_display = ('id', 'course_id', 'user', 'status', 'grade',) #POK CUSTOMIZATION 
 
 
 class CertificateGenerationCourseSettingAdmin(admin.ModelAdmin):
