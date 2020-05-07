@@ -50,11 +50,14 @@
     <br />
 
     <button type="submit" class="action action-primary action-update js-register register-button"><%- gettext("Create account") %></button>
+
+    <div class="toggle-form">
+        <span class="text en"><%- gettext('Already registered? /') %></span>
+        <span class="text it"><%- gettext('Già registrato?') %></span>
+        <span class="text en"><a href="#login" class="form-toggle en" data-type="login"><%- gettext("Log in") %></a>. /</span>
+        <span class="text it"><%- gettext('Vai al ') %> <a href="#login" class="form-toggle" data-type="login"><%- gettext("login") %></a>.</span>
+    </div>
+
 </form>
 
-<div class="toggle-form">
-    <span class="text"><%- gettext('Already registered? /') %></span>
-    <span class="text"><%- gettext('Già registrato?') %></span>
-    <a href="#login" class="form-toggle" data-type="login"><%- gettext("Log in /") %></a>
-    <a href="#login" class="form-toggle" data-type="login"><%- gettext("Vai al login") %></a>
-</div>
+
