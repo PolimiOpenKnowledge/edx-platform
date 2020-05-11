@@ -45,8 +45,9 @@
     <%= context.fields %>
 
     <div id="field-captcha" data-field="captcha">
-        <div class="g-recaptcha" data-sitekey="${settings.GOOGLE_RECAPTCHA_SITE_KEY}"></div>
+        <div class="g-recaptcha" data-sitekey="<%= context.GOOGLE_RECAPTCHA_SITE_KEY %>"></div>
     </div>
+
     <br />
 
     <button type="submit" class="action action-primary action-update js-register register-button"><%- gettext("Create account") %></button>

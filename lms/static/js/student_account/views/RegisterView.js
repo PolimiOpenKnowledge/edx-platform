@@ -55,7 +55,8 @@
                             currentProvider: this.currentProvider,
                             providers: this.providers,
                             hasSecondaryProviders: this.hasSecondaryProviders,
-                            platformName: this.platformName
+                            platformName: this.platformName,
+                            GOOGLE_RECAPTCHA_SITE_KEY: '6Lf3xjoUAAAAAA8OMbL6jFyK6H2tGVVnRS73MMYV', //#POK CUSTOMIZATION
                         }
                     }));
 
