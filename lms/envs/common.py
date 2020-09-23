@@ -2888,11 +2888,10 @@ OPTIONAL_APPS = [
 
     # Required by the Enterprise App
     ('django_object_actions', None),  # https://github.com/crccheck/django-object-actions
+
+    #POK CUSTOMIZATION
+    ('g_recaptcha', None),
 ]
-
-
-#CAPTCHA 
-OPTIONAL_APPS += ('g_recaptcha',)
 
 
 
