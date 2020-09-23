@@ -105,8 +105,8 @@ class RegistrationView(APIView):
         return HttpResponse(RegistrationFormFactory().get_registration_form(request).to_json(),
                             content_type="application/json")
 
-    @method_decorator(csrf_exempt)
     @method_decorator(validate_captcha)
+    @method_decorator(csrf_exempt)
     def post(self, request):
         """Create the user's account.
 
