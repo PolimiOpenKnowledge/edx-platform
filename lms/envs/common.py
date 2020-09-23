@@ -2890,6 +2890,14 @@ OPTIONAL_APPS = [
     ('django_object_actions', None),  # https://github.com/crccheck/django-object-actions
 ]
 
+
+#CAPTCHA 
+OPTIONAL_APPS += ('g_recaptcha',)
+
+
+
+
+
 for app_name, insert_before in OPTIONAL_APPS:
     # First attempt to only find the module rather than actually importing it,
     # to avoid circular references - only try to import if it can't be found

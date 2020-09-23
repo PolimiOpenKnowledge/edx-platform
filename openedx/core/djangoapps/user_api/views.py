@@ -37,6 +37,8 @@ from openedx.core.lib.api.permissions import ApiKeyHeaderPermission
 from student.helpers import AccountValidationError
 from util.json_request import JsonResponse
 
+from g_recaptcha.validate_recaptcha import validate_captcha
+
 
 class LoginSessionView(APIView):
     """HTTP end-points for logging in users. """
@@ -104,6 +106,7 @@ class RegistrationView(APIView):
                             content_type="application/json")
 
     @method_decorator(csrf_exempt)
+    @method_decorator(validate_captcha)
     def post(self, request):
         """Create the user's account.
 
