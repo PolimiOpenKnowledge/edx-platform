@@ -1120,3 +1120,7 @@ plugin_settings.add_plugins(__name__, plugin_constants.ProjectType.LMS, plugin_c
 derive_settings(__name__)
 
 logging.warn('DEPRECATION WARNING: aws.py has been deprecated, you should use production.py instead.')
+
+####### GOOGLE RECAPTCHA #############
+GOOGLE_RECAPTCHA_SITE_KEY = '6Lf3xjoUAAAAAA8OMbL6jFyK6H2tGVVnRS73MMYV'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Lf3xjoUAAAAAP2MtyLe8Jg0qDTtRZ-JpaOa3-f-'

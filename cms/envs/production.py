@@ -605,6 +605,11 @@ RETIREMENT_STATES = ENV_TOKENS.get('RETIREMENT_STATES', RETIREMENT_STATES)
 ############## Settings for Course Enrollment Modes ######################
 COURSE_ENROLLMENT_MODES = ENV_TOKENS.get('COURSE_ENROLLMENT_MODES', COURSE_ENROLLMENT_MODES)
 
+####### GOOGLE RECAPTCHA #############
+GOOGLE_RECAPTCHA_SITE_KEY = '6Lf3xjoUAAAAAA8OMbL6jFyK6H2tGVVnRS73MMYV'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Lf3xjoUAAAAAP2MtyLe8Jg0qDTtRZ-JpaOa3-f-'
+
+
 ####################### Plugin Settings ##########################
 
 # This is at the bottom because it is going to load more settings after base settings are loaded

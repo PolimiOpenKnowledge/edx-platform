@@ -2888,7 +2888,14 @@ OPTIONAL_APPS = [
 
     # Required by the Enterprise App
     ('django_object_actions', None),  # https://github.com/crccheck/django-object-actions
+
+    #POK CUSTOMIZATION
+    ('g_recaptcha', None),
 ]
+
+
+
+
 
 for app_name, insert_before in OPTIONAL_APPS:
     # First attempt to only find the module rather than actually importing it,

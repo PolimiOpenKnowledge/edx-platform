@@ -1103,6 +1103,10 @@ COURSE_ENROLLMENT_MODES = ENV_TOKENS.get('COURSE_ENROLLMENT_MODES', COURSE_ENROL
 ############## Settings for Writable Gradebook  #########################
 WRITABLE_GRADEBOOK_URL = ENV_TOKENS.get('WRITABLE_GRADEBOOK_URL', WRITABLE_GRADEBOOK_URL)
 
+####### GOOGLE RECAPTCHA #############
+GOOGLE_RECAPTCHA_SITE_KEY = '6Lf3xjoUAAAAAA8OMbL6jFyK6H2tGVVnRS73MMYV'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Lf3xjoUAAAAAP2MtyLe8Jg0qDTtRZ-JpaOa3-f-'
+
 ############################### Plugin Settings ###############################
 
 # This is at the bottom because it is going to load more settings after base settings are loaded

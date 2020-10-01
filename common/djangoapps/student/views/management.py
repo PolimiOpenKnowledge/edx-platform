@@ -94,6 +94,8 @@ from util.db import outer_atomic
 from util.json_request import JsonResponse
 from util.password_policy_validators import normalize_password, validate_password
 
+from g_recaptcha.validate_recaptcha import validate_captcha
+
 log = logging.getLogger("edx.student")
 
 AUDIT_LOG = logging.getLogger("audit")

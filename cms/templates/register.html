@@ -74,6 +74,12 @@ from django.urls import reverse
           </ol>
         </fieldset>
 
+
+        <div id="field-captcha" data-field="captcha">
+          <div class="g-recaptcha" data-sitekey="${settings.GOOGLE_RECAPTCHA_SITE_KEY}"></div>
+        </div>
+        <br />
+
         <div class="form-actions">
           <button type="submit" id="submit" name="submit" class="action action-primary">${_("Create My Account &amp; Start Authoring Courses")}</button>
         </div>
