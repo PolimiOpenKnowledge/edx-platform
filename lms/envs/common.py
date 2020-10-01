@@ -3479,8 +3479,49 @@ FERNET_KEYS = [
 # Maximum number of rows to fetch in XBlockUserStateClient calls. Adjust for performance
 USER_STATE_BATCH_SIZE = 5000
 
+########################## Course Discovery #######################
+
+COURSE_DISCOVERY_FILTERS = ["language", "display_organization", "more_info"]
+
+COURSE_DISCOVERY_MEANINGS = {
+        "display_organization": {
+            "name": "Subject"
+        }, 
+        "language": {
+            "name": "Language", 
+            "terms": {
+                "en": "English", 
+                "it": "Italian"
+            }
+        }, 
+        "modes": {
+            "name": "Course Type", 
+            "terms": {
+                "honor": "Honor", 
+                "verified": "Verified"
+            }
+        }, 
+        "more_info": {
+            "name": "Category", 
+            "terms": {
+                " From Bachelor's to Master ": " From Bachelor's to Master ", 
+                " From High School to University ": " From High School to University ", 
+                " From University to Job ": " From University to Job ", 
+                " MOOCs For Citizens ": " MOOCs For Citizens ", 
+                " MOOCs For Researchers ": " MOOCs For Researchers ", 
+                " MOOCs For Teachers ": " MOOCs For Teachers "
+            }
+        }, 
+        "org": {
+            "name": "Organization"
+        }
+    } 
+
+
 ############## Plugin Django Apps #########################
 
 from openedx.core.djangoapps.plugins import plugin_apps, plugin_settings, constants as plugin_constants
 INSTALLED_APPS.extend(plugin_apps.get_apps(plugin_constants.ProjectType.LMS))
 plugin_settings.add_plugins(__name__, plugin_constants.ProjectType.LMS, plugin_constants.SettingsType.COMMON)
+
+

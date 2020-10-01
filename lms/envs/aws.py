@@ -1054,6 +1054,10 @@ ICP_LICENSE = ENV_TOKENS.get('ICP_LICENSE', None)
 ############## Settings for CourseGraph ############################
 COURSEGRAPH_JOB_QUEUE = ENV_TOKENS.get('COURSEGRAPH_JOB_QUEUE', DEFAULT_PRIORITY_QUEUE)
 
+########################## Course Discovery #######################
+COURSE_DISCOVERY_FILTERS = ENV_TOKENS.get("COURSE_DISCOVERY_FILTERS", COURSE_DISCOVERY_FILTERS)
+COURSE_DISCOVERY_MEANINGS = ENV_TOKENS.get("COURSE_DISCOVERY_MEANINGS", COURSE_DISCOVERY_MEANINGS)
+
 ########################## Parental controls config  #######################
 
 # The age at which a learner no longer requires parental consent, or None
